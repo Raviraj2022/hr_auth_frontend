@@ -1,4 +1,4 @@
-import { AuthCard } from "../../../components/auth";
+import { AuthCard } from "../../../src/components/auth";
 
 export default function RegisterPage() {
   return (

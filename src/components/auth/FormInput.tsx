@@ -1,31 +1,52 @@
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+"use client";
 
-interface FormInputProps {
-  id: string;
+import {
+  Control,
+  Controller,
+  FieldPath,
+  FieldValues,
+} from "react-hook-form";
+
+import { Input } from "@/src/components/ui/input";
+import { Label } from "@/src/components/ui/label";
+
+interface Props<T extends FieldValues> {
+  control: Control<T>;
+  name: FieldPath<T>;
   label: string;
-  type?: string;
   placeholder: string;
+  type?: string;
 }
 
-export default function FormInput({
-  id,
+export default function FormInput<T extends FieldValues>({
+  control,
+  name,
   label,
-  type = "text",
   placeholder,
-}: FormInputProps) {
+  type = "text",
+}: Props<T>) {
   return (
-    <div className="space-y-2">
-      <Label htmlFor={id}>
-        {label}
-      </Label>
+    <Controller
+      control={control}
+      name={name}
+      render={({ field, fieldState }) => (
+        <div className="space-y-2">
+          <Label>{label}</Label>
 
-      <Input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        className="h-12 rounded-xl"
-      />
-    </div>
+          <Input
+            {...field}
+            type={type}
+            placeholder={placeholder}
+            className="h-12 rounded-xl"
+          />
+
+          {fieldState.error && (
+            <p className="text-sm text-red-500">
+              {fieldState.error.message}
+            </p>
+          )}
+        </div>
+      )}
+    />
   );
 }
