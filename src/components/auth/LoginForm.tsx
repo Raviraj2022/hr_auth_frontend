@@ -19,6 +19,7 @@ import PasswordInput from "./PasswordInput";
 import AuthDivider from "./AuthDivider";
 import SocialLogin from "./SocialLogin";
 import SubmitButton from "./SubmitButton";
+import { authService } from "@/app/services/auth.service";
 
 export default function LoginForm() {
     const form = useForm<LoginFormValues>({
@@ -30,8 +31,23 @@ export default function LoginForm() {
   },
 });
 
-const onSubmit = (values: LoginFormValues) => {
-  console.log(values);
+// const onSubmit = (values: LoginFormValues) => {
+//   console.log(values);
+// };
+
+const onSubmit = async (values: LoginFormValues) => {
+  try {
+    const response = await authService.login(values);
+
+    console.log(response);
+
+    // Next step:
+    // Save token
+    // Dispatch Redux
+    // Redirect
+  } catch (error) {
+    console.error(error);
+  }
 };
   return (
     <AuthCard>
