@@ -10,8 +10,8 @@ import {
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
+import { Input } from "@/app/components/ui/input";
+import { Label } from "@/app/components/ui/label";
 
 interface Props<T extends FieldValues> {
   control: Control<T>;

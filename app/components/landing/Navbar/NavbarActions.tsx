@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import { ThemeToggle } from "../../common/theme-toggle";
 
 export default function NavbarActions() {
@@ -16,7 +16,6 @@ export default function NavbarActions() {
       </Button>
 
       <Button
-       
         className="rounded-full px-6"
       >
         <Link href="/register">

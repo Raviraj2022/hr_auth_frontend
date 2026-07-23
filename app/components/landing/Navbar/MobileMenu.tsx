@@ -5,7 +5,7 @@ import { Menu } from "lucide-react";
 
 import { NAV_LINKS } from "./constants/navigation";
 import { ThemeToggle } from "../../common/theme-toggle";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -13,7 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
   SheetClose,
-} from "@/src/components/ui/sheet";
+} from "@/app/components/ui/sheet";
 
 export default function MobileMenu() {
   return (

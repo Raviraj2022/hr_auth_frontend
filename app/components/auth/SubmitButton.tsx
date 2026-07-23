@@ -1,4 +1,4 @@
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 
 interface SubmitButtonProps {
   children: React.ReactNode;

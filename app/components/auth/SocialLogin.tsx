@@ -1,5 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 
 export default function SocialLogin() {
   return (

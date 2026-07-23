@@ -4,9 +4,13 @@ import Link from "next/link";
 
 
 
-import { Checkbox } from "@/src/components/ui/checkbox";
+import { Checkbox } from "@/app/components/ui/checkbox";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+
+import { useAppDispatch } from "@/app/redux/hook";
+import { loginSuccess } from "@/app/redux/slices/authSlices";
 
 import {
   loginSchema,
@@ -22,6 +26,9 @@ import SubmitButton from "./SubmitButton";
 import { authService } from "@/app/services/auth.service";
 
 export default function LoginForm() {
+
+  const dispatch = useAppDispatch();
+const router = useRouter();
     const form = useForm<LoginFormValues>({
   resolver: zodResolver(loginSchema),
 
@@ -39,12 +46,15 @@ const onSubmit = async (values: LoginFormValues) => {
   try {
     const response = await authService.login(values);
 
-    console.log(response);
+    dispatch(
+  loginSuccess({
+    token: response.token,
+    user: response.user,
+  })
+);
 
-    // Next step:
-    // Save token
-    // Dispatch Redux
-    // Redirect
+router.replace("/dashboard");
+    
   } catch (error) {
     console.error(error);
   }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, PlayCircle } from "lucide-react";
 
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 
 export default function CTA() {
   return (

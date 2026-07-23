@@ -1,11 +1,11 @@
-import { ThemeToggle } from "@/src/components/common/theme-toggle";
-import { CTA } from "@/src/components/landing/CTA";
-import { Features } from "@/src/components/landing/Features";
-import { Footer } from "@/src/components/landing/Footer";
-import { Hero } from "@/src/components/landing/Hero";
-import { Navbar } from "@/src/components/landing/Navbar";
-import { Stats } from "@/src/components/landing/Stats";
-import { Testimonials } from "@/src/components/landing/Testimonials";
+import { ThemeToggle } from "@/app/components/common/theme-toggle";
+import { CTA } from "@/app/components/landing/CTA";
+import { Features } from "@/app/components/landing/Features";
+import { Footer } from "@/app/components/landing/Footer";
+import { Hero } from "@/app/components/landing/Hero";
+import { Navbar } from "@/app/components/landing/Navbar";
+import { Stats } from "@/app/components/landing/Stats";
+import { Testimonials } from "@/app/components/landing/Testimonials";
 // import Image from "next/image";
 
 export default function Home() {
